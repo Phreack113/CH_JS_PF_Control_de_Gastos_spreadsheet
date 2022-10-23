@@ -1,0 +1,90 @@
+.container{
+    max-width: 600px;
+    //background-color: grey;
+    .fecha { grid-area: fecha; }
+    .monto { grid-area: monto; }
+    .b1 { grid-area: b1; }
+    .b2 { grid-area: b2; }
+    .b3 { grid-area: b3; }
+    .b4 { grid-area: b4; }
+    .b5 { grid-area: b5; }
+    .b6 { grid-area: b6; }
+    .b7 { grid-area: b7; }
+    .b8 { grid-area: b8; }
+    .b9 { grid-area: b9; }
+    .bPunto { grid-area: bPunto; }
+    .b0 { grid-area: b0; }
+    .bb { grid-area: bb; }
+    .ok { grid-area: ok; }
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 10px 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "fecha fecha fecha"
+      "monto monto monto"
+      "b1 b2 b3"
+      "b4 b5 b6"
+      "b7 b8 b9"
+      "bPunto b0 bb"
+      ". ok .";
+      align-items: center;
+      justify-items: center;
+
+    .monto{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        p{
+            width: 100%;
+            text-align: right;
+        }
+        background-color: rgb(70, 70, 70);
+        border-radius: 5px;
+        padding: 10px;
+        .aj{
+            padding-top: 2px;
+        }
+        p{
+            padding-right: 5px;
+        }
+    }
+    
+    .bot{
+        width: 60px;
+        height: 60px;
+        background-color: rgb(50, 50, 50);
+        // background-color: black;
+        color: white;
+        // bo   rder: 1px solid rgb(250, 250, 250);
+        font-weight: 900;
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin: 2px;
+        &:hover{
+            background-color: rgb(100, 100, 100);
+            // background-color: white;
+        }
+    }
+    
+    .sim{
+        background-color: rgb(70, 70, 70);
+        font-size: 20px;
+    }
+
+    .ok{
+        background-color: rgb(250, 250, 250);
+        color: rgb(50, 50, 50);
+        font-size: 30px;
+        padding-top: 3px;
+    }
+    .fecha{
+        font-size: 8px;
+    }
+
+
+}
+
