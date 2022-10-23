@@ -1,5 +1,6 @@
 .container{
-    max-width: 600px;
+    width: 100%;
+    max-width: $maxWidth;
     //background-color: grey;
     .fecha { grid-area: fecha; }
     .monto { grid-area: monto; }
@@ -38,27 +39,27 @@
         p{
             width: 100%;
             text-align: right;
+            font-size: $fontSizeDisp;
+            padding-right: 5px;
         }
         background-color: rgb(70, 70, 70);
         border-radius: 5px;
         padding: 10px;
         .aj{
-            padding-top: 2px;
+            padding: 1.1vh 0 0.9vh 0;
+            font-size: $fontSizeDispIco;
         }
-        p{
-            padding-right: 5px;
-        }
-    }
+   }
     
     .bot{
-        width: 60px;
-        height: 60px;
+        width: $dimBot;
+        height: $dimBot;
         background-color: rgb(50, 50, 50);
         // background-color: black;
         color: white;
         // bo   rder: 1px solid rgb(250, 250, 250);
         font-weight: 900;
-        font-size: 25px;
+        font-size: $fontSize;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -82,7 +83,7 @@
         padding-top: 3px;
     }
     .fecha{
-        font-size: 8px;
+        font-size: $fontSizeDate;
     }
 
 

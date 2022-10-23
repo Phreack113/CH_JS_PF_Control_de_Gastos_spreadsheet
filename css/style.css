@@ -15,7 +15,8 @@ body {
   color: #fafafa; }
 
 .container {
-  max-width: 600px;
+  width: 100%;
+  max-width: calc(((100vh - 10px)/7)*4);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 10px 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -62,18 +63,19 @@ body {
     padding: 10px; }
     .container .monto p {
       width: 100%;
-      text-align: right; }
-    .container .monto .aj {
-      padding-top: 2px; }
-    .container .monto p {
+      text-align: right;
+      font-size: calc(((100vh - 10px)/7)/3);
       padding-right: 5px; }
+    .container .monto .aj {
+      padding: 1.1vh 0 0.9vh 0;
+      font-size: calc(((100vh - 10px)/7)/3.5); }
   .container .bot {
-    width: 60px;
-    height: 60px;
+    width: calc((100vh - 10px)/7);
+    height: calc((100vh - 10px)/7);
     background-color: #323232;
     color: white;
     font-weight: 900;
-    font-size: 25px;
+    font-size: calc(((100vh - 10px)/7)/2.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,4 +92,4 @@ body {
     font-size: 30px;
     padding-top: 3px; }
   .container .fecha {
-    font-size: 8px; }
+    font-size: calc(((100vh - 10px)/7)*4/30); }
