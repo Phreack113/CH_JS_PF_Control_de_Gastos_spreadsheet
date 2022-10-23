@@ -2,7 +2,6 @@
     padding: 0 5px;
     width: 100%;
     max-width: $maxWidth;
-    //background-color: grey;
     .fecha { grid-area: fecha; }
     .monto { grid-area: monto; }
     .b1 { grid-area: b1; }
@@ -74,13 +73,13 @@
     
     .sim{
         background-color: rgb(70, 70, 70);
-        font-size: 20px;
+        font-size: $fontSizeDispIco;
     }
 
     .ok{
         background-color: rgb(250, 250, 250);
         color: rgb(50, 50, 50);
-        font-size: 30px;
+        font-size: $fontSize;
         padding-top: 3px;
     }
     .fecha{
