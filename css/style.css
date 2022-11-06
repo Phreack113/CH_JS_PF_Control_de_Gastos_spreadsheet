@@ -3,7 +3,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Montserrat', sans-serif;
+  font-size: 62.5%; }
 
 body {
   display: flex;
@@ -12,15 +13,19 @@ body {
   align-items: center;
   background-image: linear-gradient(-45deg, #323232, #0a0a0a);
   height: 100vh;
-  color: #fafafa; }
+  color: #fafafa;
+  user-select: none; }
+
+.off {
+  display: none !important; }
 
 .container {
-  padding: 0 5px;
+  padding: 0 .5rem;
   width: 100%;
-  max-width: calc(((100vh - 10px)/8)*4);
+  max-width: calc(((100vh - 1rem)/8)*4);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 10px 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1rem 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-areas: "fecha fecha fecha" "monto monto monto" "b1 b2 b3" "b4 b5 b6" "b7 b8 b9" "bPunto b0 bb" ". ok .";
   align-items: center;
   justify-items: center; }
@@ -60,37 +65,81 @@ body {
     justify-content: space-between;
     width: 100%;
     background-color: #464646;
-    border-radius: 5px;
-    padding: 10px; }
+    border-radius: .5rem;
+    padding: 1rem; }
     .container .monto p {
       width: 100%;
       text-align: right;
-      font-size: calc(((100vh - 10px)/8)/3);
-      padding-right: 5px; }
+      font-size: calc(((100vh - 1rem)/8)/3);
+      padding-right: .5rem; }
     .container .monto .aj {
-      padding: 1.1vh 0 0.9vh 0;
-      font-size: calc(((100vh - 10px)/8)/3.5); }
+      font-size: calc(((100vh - 1rem)/8)/2.5); }
   .container .bot {
-    width: calc((100vh - 10px)/8);
-    height: calc((100vh - 10px)/8);
+    width: calc((100vh - 1rem)/8);
+    height: calc((100vh - 1rem)/8);
     background-color: #323232;
     color: white;
     font-weight: 900;
-    font-size: calc(((100vh - 10px)/8)/2.1);
+    font-size: calc(((100vh - 1rem)/8)/2.1);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    margin: 2px; }
+    margin: .2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
     .container .bot:hover {
       background-color: #646464; }
   .container .sim {
     background-color: #464646;
-    font-size: calc(((100vh - 10px)/8)/3.5); }
+    font-size: calc(((100vh - 1rem)/8)/2.5); }
   .container .ok {
     background-color: #fafafa;
     color: #323232;
-    font-size: calc(((100vh - 10px)/8)/2.1);
-    padding-top: 3px; }
+    font-size: calc(((100vh - 1rem)/8)/2.1);
+    padding-top: .3rem; }
   .container .fecha {
-    font-size: calc(((100vh - 10px)/8)*4/30); }
+    font-size: calc(((100vh - 1rem)/8)*4/30); }
+
+.origenSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; }
+  .origenSection .oriCard {
+    display: flex;
+    flex-direction: row; }
+    .origenSection .oriCard .oriDetail {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: .2rem; }
+      .origenSection .oriCard .oriDetail .oriName {
+        font-size: 2rem; }
+      .origenSection .oriCard .oriDetail .oriType {
+        font-size: 1rem;
+        font-style: italic; }
+    .origenSection .oriCard .ico {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      margin: 1rem; }
+  .origenSection button {
+    border-style: none;
+    border-radius: 1rem;
+    width: 35rem;
+    margin: 1rem;
+    background-color: #323232;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+    .origenSection button:hover {
+      background-color: black;
+      background-color: #464646; }
+  .origenSection h2 {
+    font-size: 2rem;
+    width: 35rem;
+    text-align: center;
+    border-bottom: 1px solid #323232;
+    padding: 2rem; }

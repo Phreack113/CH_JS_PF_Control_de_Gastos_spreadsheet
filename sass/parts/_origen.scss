@@ -1,0 +1,55 @@
+.origenSection{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: space-around;
+    height: 100vh;
+    .oriCard{
+        display: flex;
+        flex-direction: row;
+        .oriDetail{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: .2rem;
+            .oriName{
+                font-size: 2rem;
+            }
+            .oriType{
+                font-size: 1rem;
+                font-style: italic;
+            }
+        }
+        .ico{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            margin: 1rem;
+        }
+    }
+
+    button{
+        border-style: none;
+        border-radius: 1rem;
+        width: 35rem;
+        margin: 1rem;
+        background-color: rgb(50, 50, 50);
+        color: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        &:hover{
+            background-color: black;
+            background-color: rgb(70, 70, 70);
+        }
+    }
+
+    h2{
+        font-size: 2rem;
+        width: 35rem;
+        text-align: center;
+        border-bottom: 1px solid rgb(50, 50, 50);
+        padding: 2rem;
+    }
+}

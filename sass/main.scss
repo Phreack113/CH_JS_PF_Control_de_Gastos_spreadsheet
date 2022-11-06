@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+    font-size: 62.5%;
 }
 
 body{
@@ -15,7 +16,13 @@ body{
     background-image: linear-gradient(-45deg,  rgb(50, 50, 50), rgb(10, 10, 10));
     height: 100vh;
     color: rgb(250, 250, 250);
+    user-select: none;
 }
 
-@import './parts/_variables.scss';
-@import './parts/_botonera.scss';
+.off{
+    display: none !important;
+}
+
+@import './parts/_variables';
+@import './parts/_botonera';
+@import './parts/origen';
