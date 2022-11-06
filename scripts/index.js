@@ -34,9 +34,6 @@ class Gasto {
 //Instancio un nuevo objeto llamado gasto de la clase Gasto
 const gasto = new Gasto();
 
-
-
-
 const botonera = btn => {
     if (btn.classList.contains('num')){
         if (disp.innerHTML > 0){
@@ -51,7 +48,7 @@ const botonera = btn => {
             disp.innerHTML += btn.innerHTML;
         }
     } else if (btn.classList.contains('ok')){
-        console.log(disp.innerHTML);
+        // console.log(disp.innerHTML);
     }
 }
 
@@ -61,35 +58,60 @@ const mediosPago = [
     {
         name: 'Efectivo',
         type: 'Cash',
-        icon: ''
+        icon: 'fa-solid fa-money-bill'
     },
     {
         name: 'Santander',
         type: 'Debito',
-        icon: ''
+        icon: 'fa-regular fa-credit-card'
     },
     {
         name: 'BBVA',
         type: 'Debito',
-        icon: ''
+        icon: 'fa-regular fa-credit-card'
     },
     {
         name: 'Visa BBVA',
         type: 'Credito',
-        icon: ''
+        icon: 'fa-solid fa-credit-card'
     },
     {
         name: 'Visa Santander',
         type: 'Credito',
-        icon: ''
+        icon: 'fa-solid fa-credit-card'
     }
 ];
 
-//Procesos que va a renderizar en pantalla la botonera con los medios de pago que lleguen desde la spreadsheet
-for (const medio of mediosPago) {
-    //Por el momento solo los renderizo en pantalla
-    console.log(`El medio de pago ${medio.name}, es un medio de pago de ${medio.type}`);
+
+const origen = document.querySelector('.origen');
+
+const origenPago = mediosPago => {
+    origen.innerHTML = '';
+    mediosPago.forEach( medio => {
+        origen.append(oriBtn(medio));
+    });
+};
+
+const oriBtn = medio => {
+    const btnSrc = document.createElement('button');
+    btnSrc.innerHTML =`
+    <div class="oriCard">
+        <div class="ico">
+            <i class="${medio.icon}"></i>
+        </div>
+        <div class="oriDetail">
+            <div class="oriName">${medio.name}</div>
+            <div class="oriType">${medio.type}</div>
+        </div>
+    </div>
+    `;
+    btnSrc.addEventListener('click', e => {
+        alert('pepe');
+    });
+    return btnSrc;
 }
+
+origenPago(mediosPago);
 
 
 
