@@ -206,7 +206,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%; }
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; }
   .gastoOkSection .cargaOK {
     display: flex;
     justify-content: center;
@@ -236,6 +238,6 @@ body {
   50% {
     opacity: 100%; }
   100% {
-    width: 250vh;
-    height: 250vh;
+    width: calc(200vh + 200vw);
+    height: calc(200vh + 200vw);
     opacity: 0; } }

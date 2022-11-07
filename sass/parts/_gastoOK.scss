@@ -3,6 +3,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100vh;
+    overflow: hidden;
     .cargaOK{
         display: flex;
         justify-content: center;
@@ -39,8 +41,8 @@
         opacity: 100%;
     }
     100% {
-        width: 250vh;
-        height: 250vh;
+        width: calc(200vh + 200vw);
+        height: calc(200vh + 200vw);
         opacity: 0;
     }
   }
