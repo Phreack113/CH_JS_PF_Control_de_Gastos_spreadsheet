@@ -1,0 +1,38 @@
+.gastoOkSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .cargaOK{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10rem;
+        height: 10rem;
+        background-color: green;
+        border-radius: 50%;
+        animation: mymove 1.5s none;
+        i{
+            color: white;
+            font-size: 5rem;
+        }
+    }
+}
+
+@keyframes mymove {
+    0% {
+        border-radius: 50%;
+        width: 10rem;
+        height: 10rem;
+        opacity: 100%;
+    }
+    50%{
+        opacity: 100%;
+    }
+    100% {
+        border-radius: 0%;
+        width: 100%;
+        height: 100vh;
+        opacity: 0;
+    }
+  }

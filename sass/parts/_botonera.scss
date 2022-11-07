@@ -82,8 +82,11 @@
         padding-top: .3rem;
 
     }
-    .fecha{
+    .fecha p{
         font-size: $fontSizeDate;
+        i{
+            font-size: $fontSizeDateIco;
+        }
     }
 
 
