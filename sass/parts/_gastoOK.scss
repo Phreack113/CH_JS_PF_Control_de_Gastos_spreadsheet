@@ -5,6 +5,7 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    animation: colors 2s none;
     .cargaOK{
         display: flex;
         justify-content: center;
@@ -13,7 +14,7 @@
         height: 10rem;
         background-color: green;
         border-radius: 50%;
-        animation: mymove 2.5s none;
+        animation: mymove 2s none;
         i{
             color: white;
             font-size: 5rem;
@@ -35,14 +36,26 @@
     40% {
         width: 8rem;
         height: 8rem;
-        opacity: 100%;
-    }
-    50%{
-        opacity: 100%;
+        //opacity: 100%;
     }
     100% {
-        width: calc(200vh + 200vw);
-        height: calc(200vh + 200vw);
-        opacity: 0;
+        width: 100%;
+        height: 100vw;
+        // opacity: 0;
+    }
+}
+
+@keyframes colors {
+    0%{
+        background-color: rgba(0, 0, 0, 0);
+        opacity: 100%;
+    }
+    60%{
+        background-color: rgba(0, 0, 0, 0);
+        opacity: 100%;
+    }
+    100%{
+        opacity: 0%;
+        background-color: green;
     }
   }

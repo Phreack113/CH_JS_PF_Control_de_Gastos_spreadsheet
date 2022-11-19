@@ -8,8 +8,8 @@
 
 body {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   background-image: linear-gradient(-45deg, #323232, #0a0a0a);
   height: 100vh;
@@ -18,6 +18,16 @@ body {
 
 .off {
   display: none !important; }
+
+.menu i {
+  color: gainsboro;
+  font-size: 2rem;
+  margin: .5rem 1rem;
+  padding: 1rem;
+  border-radius: 50%; }
+  .menu i:hover {
+    background-color: #323232;
+    cursor: pointer; }
 
 .container {
   padding: 0 .5rem;
@@ -145,7 +155,7 @@ body {
     width: 35rem;
     text-align: center;
     border-bottom: 1px solid #323232;
-    padding: 2rem; }
+    padding: 1rem; }
 
 .categSection {
   position: relative;
@@ -159,7 +169,7 @@ body {
     width: 35rem;
     text-align: center;
     border-bottom: 1px solid #323232;
-    padding: 2rem; }
+    padding: 1rem; }
   .categSection .categList {
     width: 95%;
     display: flex;
@@ -208,7 +218,8 @@ body {
   align-items: center;
   width: 100%;
   height: 100vh;
-  overflow: hidden; }
+  overflow: hidden;
+  animation: colors 2s none; }
   .gastoOkSection .cargaOK {
     display: flex;
     justify-content: center;
@@ -217,7 +228,7 @@ body {
     height: 10rem;
     background-color: green;
     border-radius: 50%;
-    animation: mymove 2.5s none; }
+    animation: mymove 2s none; }
     .gastoOkSection .cargaOK i {
       color: white;
       font-size: 5rem; }
@@ -233,11 +244,18 @@ body {
     opacity: 100%; }
   40% {
     width: 8rem;
-    height: 8rem;
+    height: 8rem; }
+  100% {
+    width: 100%;
+    height: 100vw; } }
+
+@keyframes colors {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
     opacity: 100%; }
-  50% {
+  60% {
+    background-color: rgba(0, 0, 0, 0);
     opacity: 100%; }
   100% {
-    width: calc(200vh + 200vw);
-    height: calc(200vh + 200vw);
-    opacity: 0; } }
+    opacity: 0%;
+    background-color: green; } }

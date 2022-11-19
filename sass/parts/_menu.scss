@@ -1,0 +1,13 @@
+.menu{
+    i{
+        color: rgb(220, 220, 220);
+        font-size: 2rem;
+        margin: .5rem 1rem;
+        padding: 1rem;
+        border-radius: 50%;
+        &:hover{
+            background-color: rgb(50, 50, 50);
+            cursor: pointer;
+        }
+    }
+}

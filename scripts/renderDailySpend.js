@@ -1,0 +1,1 @@
+const gastoDiaDetalle = document.querySelector('.gastoDiaDetalle');
