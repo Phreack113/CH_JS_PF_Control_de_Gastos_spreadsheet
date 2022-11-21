@@ -1,10 +1,11 @@
 //Clase constructora del objeto gastos
 class Gasto {
-    constructor (monto, medioName, medioType, categoria){
+    constructor (monto, medioName, medioType, categoria, desc){
         this.monto = monto;
         this.medioName = medioName;
         this.medioType = medioType;
         this.categoria = categoria;
+        this.desc = desc;
     }
 
     setAmount(monto){
@@ -15,14 +16,14 @@ class Gasto {
         this.medioName = name;
         this.medioType = type;
     }
-    setCateg(cat){
+    setCateg(cat, desc){
         this.categoria = cat;
+        this.desc = desc;
     }
 
     send(){
         //Metodo que enviará el gasto a la spreadsheet.
     }
-
     reset(){
         //Metodo que permite resetear las variables
         this.monto = 0;

@@ -1,0 +1,97 @@
+.gastoDiaDetalle{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    h2{
+        font-size: 2rem;
+        width: 35rem;
+        text-align: center;
+        border-bottom: 1px solid rgb(50, 50, 50);
+        padding: 1rem;
+    }
+    .catFilter, .monthFilter{
+        height: 18rem;
+        width: 100%;
+        overflow-x: scroll;
+        display: flex;
+        .catBut{
+            cursor: pointer;
+            background-color: rgb(40, 40, 40);
+            color: white;
+            border-radius: 1rem;
+            border-style: none;
+            padding: .5rem 1rem;
+            margin: .5rem;
+            font-size: 1rem;
+            height: auto;      
+            white-space: nowrap;   
+            &:hover{
+                background-color: rgb(50, 50, 50);
+                color: white;
+            }
+        }
+        .butSelected{
+            color: black;
+            background-color: rgba(255, 255, 255, 1);
+            
+        }
+        &::-webkit-scrollbar{
+            background-color: rgba(0, 0, 0, 0);
+            height: 0;
+        }   
+        &::-webkit-scrollbar-thumb{
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+        }
+    }
+    .spendDailyList{
+        overflow-y: scroll;
+        font-size: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        .df-r{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .df-c{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .mp{
+            margin: .5rem 1rem;
+            padding: .5rem .2rem;
+        }
+        .spendCard{
+            padding: 1rem;
+            margin: .4rem 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            &:hover{
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+        }
+        .detalles{
+            font-size: 1.5rem;
+        }
+        &::-webkit-scrollbar{
+            background-color: rgba(0, 0, 0, 0);
+            width: .5rem;
+        }   
+        &::-webkit-scrollbar-thumb{
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        i[data-id]{
+            cursor: pointer;
+        }
+    }
+}

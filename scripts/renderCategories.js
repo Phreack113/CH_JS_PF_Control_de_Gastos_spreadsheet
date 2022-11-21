@@ -58,11 +58,12 @@ const catTag = cat => {
         }else{
             //Flujo gasto
             //Carge la categoría en el objeto gasto a traves del método setCateg
-            gasto.setCateg(e.target.dataset.cat);
+            gasto.setCateg(e.target.dataset.cat,'');
             //Oculto la seccion de categoría y desoculto la sección de gastoOK
             categSection.classList.add('off');
             gastoOKSection.classList.remove('off');
-            console.log('Objeto gasto:', gasto);        
+            console.log('Objeto gasto:', gasto);
+            newSpend(gasto);        
         }
     });
     return div;
@@ -70,6 +71,7 @@ const catTag = cat => {
 
 //Renderiza las categorías
 const renderCat = categories => {
+    categList.innerHTML = '';
     categories.forEach(cat => {
         categList.append(catTag(cat));
     });

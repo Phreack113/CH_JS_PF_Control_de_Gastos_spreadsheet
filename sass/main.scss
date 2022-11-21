@@ -17,6 +17,7 @@ body{
     height: 100vh;
     color: rgb(250, 250, 250);
     user-select: none;
+    overflow: hidden;
 }
 
 .off{
@@ -24,6 +25,7 @@ body{
 }
 
 @import './parts/menu';
+@import './parts/gastosDia';
 @import './parts/_variables';
 @import './parts/_botonera';
 @import './parts/origen';

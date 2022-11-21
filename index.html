@@ -15,6 +15,7 @@
         <script defer src="./scripts/renderMediosPago.js"></script>
         <script defer src="./scripts/renderOkScreen.js"></script>
         <script defer src="./scripts/renderDailySpend.js"></script>
+        <script defer src="./scripts/connectionSpreadSheet.js"></script>
         <script defer src="./scripts/index.js"></script>
         <script defer src="./scripts/menu.js"></script>
         <script defer src=""></script>
@@ -35,7 +36,12 @@
         <div class="monto">
             <i class="fa-solid fa-money-bill aj"></i>
             <p>0</p>
-            <i class="fa-solid fa-xmark aj"></i>
+            <div>
+                <i class="fa-solid fa-xmark aj"></i>
+                <div class="spiner off">
+                    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                </div>
+            </div>
         </div>
         <div class="b1 bot num">1</div>
         <div class="b2 bot num">2</div>
@@ -58,15 +64,20 @@
 <h2>Seleccione medio de pago</h2>
 </section>
 <section class="categSection off">
-<h2>Seleccione la categoría</h2>
-<div class="categList"></div>
+    <h2>Seleccione la categoría</h2>
+    <div class="categList"></div>
 </section>
 <section class="gastoOkSection off">
     <div class="cargaOK">
         <i class="fa-solid fa-check okBot"></i>
     </div>
 </section>
-<section class="gastoDiaDetalle"></section>
+<section class="gastoDiaDetalle off">
+    <h2>Gastos diarios</h2>
+    <div class="catFilter"></div>
+    <div class="monthFilter"></div>
+    <div class="spendDailyList"></div>
+</section>
 </body>
 </html>
 

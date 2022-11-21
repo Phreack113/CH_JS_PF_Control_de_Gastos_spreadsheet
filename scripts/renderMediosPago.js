@@ -30,6 +30,7 @@ const oriBtn = medio => {
 
 //Renderiza cada boton en el front
 const origenPago = mediosPago => {
+    origenSection.innerHTML = '';
     mediosPago.forEach( medio => {
         origenSection.append(oriBtn(medio));
     });

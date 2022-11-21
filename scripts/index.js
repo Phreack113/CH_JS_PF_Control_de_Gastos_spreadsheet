@@ -13,13 +13,53 @@ La idea principal es que se pueda registrar un gasto con la menor cantidad de cl
 const gasto = new Gasto();
 gasto.setAmount(0); //Seteo un valor inicial
 
-//Renderiza la botonera con los medios de pago
-origenPago(mediosPago);
+//Aca guardo los gastos para luego filtrarlos
+let spendArr = [];
 
-//Renderiza la botonera de categorías
-renderCat(categories);
+const data = async () => {
+  //Hace la consulta a la spredsheet desde la función en el file connectionSpreadSheet.js
+  const obj = await req('?action=getAll');
+  // const obj = await req('');
+  console.log(obj);
+  
+  //Seteo el estado inicial
+  renderAll(obj);
 
+};
+data();
 
+const newSpend = async objGasto => {
+  const parametros = `?action=setSpend&origen=${objGasto.medioName}&categoria=${objGasto.categoria}&desc=${objGasto.desc}&monto=${objGasto.monto}`;
+  const newState = await req(parametros.replace(' ','%20'));
+  console.log(newState);
+  
+  //Seteo el nuevo estado
+  renderAll(newState);
+}
+
+const renderAll = obj => {
+  //Renderiza la botonera de la sección de origenes de pago
+  origenPago(obj.origins);
+    
+  //Renderiza la botonera de categorías
+  renderCat(obj.categories);
+
+  //Renderizo los botones del filtro de categorías
+  renderCatFilter(obj.categories);
+
+  //Renderizo los filtros de mes
+  renderMonthFilter(obj.spend);
+
+  //Agrego un id a cada objeto de gasto diario, lo uso para identificar el objeto borrado
+  spendArr = obj.spend.map( (e,i) => {
+    e.id = i + 2;
+    return e;
+  });
+  //Renderizo gastos diarios
+  const options = { year: 'numeric', month: 'short'};
+  const mesActual = new Date().toLocaleDateString("es-ES", options);
+  renderDailySpend(spendArr, 'Todas', mesActual);
+}
 
 
 
