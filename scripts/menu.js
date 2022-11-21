@@ -3,19 +3,22 @@ const keyboard = document.querySelector('.keyboard');
 const gastosDia = document.querySelector('.gastosDia');
 
 gastosCat.addEventListener('click', () => {
-    categSection.classList.remove('off');
-    montoSection.classList.add('off');
-    gastoDiaDetalle.classList.add('off');
+    changeScreen(categSection);
 });
 
 keyboard.addEventListener('click', () => {
-    montoSection.classList.remove('off');
-    gastoDiaDetalle.classList.add('off');
-    categSection.classList.add('off');
+    changeScreen(montoSection);
 });
 
 gastosDia.addEventListener('click', () => {
-    gastoDiaDetalle.classList.remove('off');
-    montoSection.classList.add('off');
-    categSection.classList.add('off');
+    changeScreen(gastoDiaDetalle);
 });
+
+const changeScreen = sectionOn => {
+    categSection.classList.add('off');
+    montoSection.classList.add('off');
+    gastoDiaDetalle.classList.add('off');
+    gastoOKSection.classList.add('off')
+    sectionOn.classList.remove('off');
+}
+

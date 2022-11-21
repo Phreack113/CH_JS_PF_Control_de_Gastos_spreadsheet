@@ -30,12 +30,47 @@ body {
     background-color: #323232;
     cursor: pointer; }
 
+.spiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%; }
+  .spiner .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem; }
+  .spiner .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: .15rem solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent; }
+  .spiner .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s; }
+  .spiner .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s; }
+  .spiner .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s; }
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
 .gastoDiaDetalle {
   position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   height: 100vh; }
   .gastoDiaDetalle h2 {
     font-size: 2rem;
@@ -44,7 +79,7 @@ body {
     border-bottom: 1px solid #323232;
     padding: 1rem; }
   .gastoDiaDetalle .catFilter, .gastoDiaDetalle .monthFilter {
-    height: 18rem;
+    height: 3.5rem;
     width: 100%;
     overflow-x: scroll;
     display: flex; }
@@ -77,7 +112,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%; }
+    width: 100%;
+    height: 70vh; }
     .gastoDiaDetalle .spendDailyList .df-r {
       display: flex;
       flex-direction: row;
@@ -164,39 +200,6 @@ body {
       padding-right: .5rem; }
     .container .monto .aj {
       font-size: calc(((100vh - 1rem)/8)/2.5); }
-    .container .monto .spiner {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      width: 100%; }
-      .container .monto .spiner .lds-ring {
-        display: inline-block;
-        position: relative;
-        width: 1.5rem;
-        height: 1.5rem; }
-      .container .monto .spiner .lds-ring div {
-        box-sizing: border-box;
-        display: block;
-        position: absolute;
-        width: 1.5rem;
-        height: 1.5rem;
-        border: .15rem solid #fff;
-        border-radius: 50%;
-        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-        border-color: #fff transparent transparent transparent; }
-      .container .monto .spiner .lds-ring div:nth-child(1) {
-        animation-delay: -0.45s; }
-      .container .monto .spiner .lds-ring div:nth-child(2) {
-        animation-delay: -0.3s; }
-      .container .monto .spiner .lds-ring div:nth-child(3) {
-        animation-delay: -0.15s; }
-
-@keyframes lds-ring {
-  0% {
-    transform: rotate(0deg); }
-  100% {
-    transform: rotate(360deg); } }
   .container .bot {
     width: calc((100vh - 1rem)/8);
     height: calc((100vh - 1rem)/8);

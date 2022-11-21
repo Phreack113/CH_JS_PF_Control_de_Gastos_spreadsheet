@@ -5,8 +5,7 @@ const gastoOKSection = document.querySelector('.gastoOkSection');
 const animation = document.querySelector('.cargaOK');
 animation.addEventListener('animationend', () =>{
     //Una vez finalizada la animación la desactiva y activa nuevamente el teclado
-    gastoOKSection.classList.add('off');
-    montoSection.classList.remove('off');
+    changeScreen(montoSection)
     //Reseteo el objeto gasto        
     gasto.reset();
 });

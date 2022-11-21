@@ -54,14 +54,19 @@ const catTag = cat => {
         //Con esta comparación detecto en que flujo estoy (cargando un gasto o consultando gastos)
         if (gasto.queryAmount()){
             //Flujo de consulta
-
+            const {target} = e;
+            const childs = target.parentElement.parentElement.childNodes;
+            const parent = Array.apply(null, childs);
+            const index = parent.findIndex(e => e === target.parentElement) + 2;
+            const buttonCat = document.querySelector(`.catFilter :nth-child(${index})`);
+            buttonCat.click();
+            changeScreen(gastoDiaDetalle);
         }else{
             //Flujo gasto
             //Carge la categoría en el objeto gasto a traves del método setCateg
             gasto.setCateg(e.target.dataset.cat,'');
             //Oculto la seccion de categoría y desoculto la sección de gastoOK
-            categSection.classList.add('off');
-            gastoOKSection.classList.remove('off');
+            changeScreen(gastoOKSection);
             console.log('Objeto gasto:', gasto);
             newSpend(gasto);        
         }

@@ -10,7 +10,6 @@ const constBut = (cat, tag) => {
     but.classList.add('catBut');
     but.addEventListener('click', e => {
         console.log(e.target.innerHTML);
-        let xSelected;
         if (e.target.classList.contains('cate')){
             const xSelected = catFilter.querySelector('.butSelected');    
             xSelected.classList.remove('butSelected');
@@ -20,6 +19,7 @@ const constBut = (cat, tag) => {
             xSelected.classList.remove('butSelected');
         }
         e.target.classList.add('butSelected');
+        renderDailySpend(spendArr);
     });
     return but;
 }
@@ -34,11 +34,10 @@ const renderCatFilter = cat => {
 
 const renderMonthFilter = spend => {
     monthFilter.innerHTML = '';
-    catFilter.append(constBut('Todos'));
     const options = { year: 'numeric', month: 'short'};
     let month = spend.map(m => new Date(m.date).toLocaleDateString("es-ES", options));
     month = [...new Set(month)];
-    month.forEach( e => monthFilter.append(constBut(e, 'mes')));
+    month.reverse().forEach( e => monthFilter.append(constBut(e, 'mes')));
     monthFilter.querySelector('.catBut:first-child').classList.add('butSelected');
 }
 
@@ -61,21 +60,32 @@ const compSpend = e => {
         </div>
         <div>${e.desc}</div>
     </div>
-    <div class="mp">${e.monto}</div>
+    <div class="mp">${
+        e.monto.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD"
+        })
+    }</div>
     <div class="df-r mp">
         <i class="fa-solid fa-trash" data-id=${e.id}></i>
     </div>
     `; 
 
     div.addEventListener('click', async e => {
+        e.target.parentElement.innerHTML = `
+        <div class="spiner">
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </div>
+        `;
         const newState = await req(`?action=delete&id=${e.target.dataset.id}`);
         renderAll(newState);
     });
     return div;
 }
 
-
-const renderDailySpend = (spend, filterCat, filterMonth) => {
+const renderDailySpend = (spend) => {
+    const filterCat = catFilter.querySelector('.butSelected').innerHTML;
+    const filterMonth = monthFilter.querySelector('.butSelected').innerHTML;
     spendDailyList.innerHTML = '';
     spend.filter( e => {
         const options = { year: 'numeric', month: 'short'};

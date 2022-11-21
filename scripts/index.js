@@ -50,15 +50,12 @@ const renderAll = obj => {
   //Renderizo los filtros de mes
   renderMonthFilter(obj.spend);
 
-  //Agrego un id a cada objeto de gasto diario, lo uso para identificar el objeto borrado
-  spendArr = obj.spend.map( (e,i) => {
-    e.id = i + 2;
-    return e;
-  });
+  //Almaceno el array de gasto
+  spendArr = obj.spend;
   //Renderizo gastos diarios
-  const options = { year: 'numeric', month: 'short'};
-  const mesActual = new Date().toLocaleDateString("es-ES", options);
-  renderDailySpend(spendArr, 'Todas', mesActual);
+  // const options = { year: 'numeric', month: 'short'};
+  // const mesActual = new Date().toLocaleDateString("es-ES", options);
+  renderDailySpend(spendArr);
 }
 
 
