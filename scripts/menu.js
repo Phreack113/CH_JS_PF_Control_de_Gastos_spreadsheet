@@ -15,6 +15,7 @@ gastosDia.addEventListener('click', () => {
 });
 
 const changeScreen = sectionOn => {
+    origenSection.classList.add('off');
     categSection.classList.add('off');
     montoSection.classList.add('off');
     gastoDiaDetalle.classList.add('off');

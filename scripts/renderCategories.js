@@ -1,6 +1,7 @@
 //Almaceno en constantes los nodos a utilizar
 const categSection = document.querySelector('.categSection');
 const categList = document.querySelector('.categList');
+const descId = document.querySelector('#desc');
 
 //Crea la estructura HTML de las categorías con los semaforos y los lisners
 const catTag = cat => {
@@ -63,10 +64,11 @@ const catTag = cat => {
             changeScreen(gastoDiaDetalle);
         }else{
             //Flujo gasto
-            //Carge la categoría en el objeto gasto a traves del método setCateg
-            gasto.setCateg(e.target.dataset.cat,'');
+            //Cargo la categoría y descripción en el objeto gasto a traves del método setCateg
+            gasto.setCateg(e.target.dataset.cat, descId.value);
             //Oculto la seccion de categoría y desoculto la sección de gastoOK
             changeScreen(gastoOKSection);
+            desc.classList.add('off');
             console.log('Objeto gasto:', gasto);
             newSpend(gasto);        
         }

@@ -1,5 +1,6 @@
 //Almaceno en constantes los nodos a utilizar
 const origenSection = document.querySelector('.origenSection');
+const desc = document.querySelector('.desc');
 
 //Prepara la interface cada botón de origen de pago
 const oriBtn = medio => {
@@ -22,8 +23,8 @@ const oriBtn = medio => {
         //Lo cargo en el objeto gasto a traves del método setOrigen
         gasto.setOrigen(oriName, oriType);
         //Oculto la seccion de origen y desoculto la sección de categoría
-        origenSection.classList.add('off');
-        categSection.classList.remove('off');        
+        changeScreen(categSection);      
+        desc.classList.remove('off'); 
     });
     return btnSrc;
 }

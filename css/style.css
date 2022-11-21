@@ -4,7 +4,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  user-select: none; }
 
 body {
   display: flex;
@@ -84,6 +85,7 @@ body {
     overflow-x: scroll;
     display: flex; }
     .gastoDiaDetalle .catFilter .catBut, .gastoDiaDetalle .monthFilter .catBut {
+      user-select: none;
       cursor: pointer;
       background-color: #282828;
       color: white;
@@ -95,8 +97,8 @@ body {
       height: auto;
       white-space: nowrap; }
       .gastoDiaDetalle .catFilter .catBut:hover, .gastoDiaDetalle .monthFilter .catBut:hover {
-        background-color: #323232;
-        color: white; }
+        color: black;
+        background-color: white; }
     .gastoDiaDetalle .catFilter .butSelected, .gastoDiaDetalle .monthFilter .butSelected {
       color: black;
       background-color: white; }
@@ -327,6 +329,17 @@ body {
       background-color: rgba(0, 0, 0, 0); }
       .categSection .cat button:hover {
         cursor: pointer; }
+  .categSection .desc {
+    width: 100%;
+    max-width: 80rem;
+    padding: 0.5rem; }
+    .categSection .desc input {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      border-style: none;
+      background-color: rgba(255, 255, 255, 0.95); }
 
 .gastoOkSection {
   display: flex;

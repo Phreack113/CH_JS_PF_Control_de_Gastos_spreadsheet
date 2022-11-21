@@ -30,8 +30,7 @@ const botonera = btn => {
         //El usuario termina de ingresar el gasto y presiona OK
         //Luego almaceno el gasto dentro del objeto, oculto la sección del teclado y desoculto la siguiente seción.
         gasto.setAmount(parseFloat(disp.innerHTML));
-        montoSection.classList.add('off');
-        origenSection.classList.remove('off');
+        changeScreen(origenSection);
         //Resetea el monto del teclado 
         disp.innerHTML = 0;
     }
