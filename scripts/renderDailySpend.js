@@ -72,13 +72,15 @@ const compSpend = e => {
     `; 
 
     div.addEventListener('click', async e => {
-        e.target.parentElement.innerHTML = `
-        <div class="spiner">
-            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-        </div>
-        `;
-        const newState = await req(`?action=delete&id=${e.target.dataset.id}`);
-        renderAll(newState);
+        if (e.target.dataset.id){
+            e.target.parentElement.innerHTML = `
+            <div class="spiner">
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+            `;
+            const newState = await req(`?action=delete&id=${e.target.dataset.id}`);
+            renderAll(newState);
+        }
     });
     return div;
 }
