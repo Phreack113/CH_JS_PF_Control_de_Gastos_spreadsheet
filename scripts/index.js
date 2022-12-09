@@ -46,16 +46,20 @@ const renderAll = obj => {
 
   //Renderizo los botones del filtro de categorías
   renderCatFilter(obj.categories);
-
-  //Renderizo los filtros de mes
-  renderMonthFilter(obj.spend);
-
-  //Almaceno el array de gasto
-  spendArr = obj.spend;
-  //Renderizo gastos diarios
-  // const options = { year: 'numeric', month: 'short'};
-  // const mesActual = new Date().toLocaleDateString("es-ES", options);
-  renderDailySpend(spendArr);
+  if (obj.spend.length > 0){
+    //Renderizo los filtros de mes
+    renderMonthFilter(obj.spend);
+  
+    //Almaceno el array de gasto
+    spendArr = obj.spend;
+    //Renderizo gastos diarios
+    renderDailySpend(spendArr);
+  } else {
+    //Si no hay gastos diarios no renderizo nada
+    spendDailyList.innerHTML = '';
+    monthFilter.innerHTML = '';
+    spendArr = [];
+  }
 }
 
 

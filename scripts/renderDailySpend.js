@@ -9,7 +9,7 @@ const constBut = (cat, tag) => {
     but.classList.add(tag);
     but.classList.add('catBut');
     but.addEventListener('click', e => {
-        console.log(e.target.innerHTML);
+        // console.log(e.target.innerHTML);
         if (e.target.classList.contains('cate')){
             const xSelected = catFilter.querySelector('.butSelected');    
             xSelected.classList.remove('butSelected');
@@ -19,7 +19,9 @@ const constBut = (cat, tag) => {
             xSelected.classList.remove('butSelected');
         }
         e.target.classList.add('butSelected');
-        renderDailySpend(spendArr);
+        if (spendArr.length > 0){
+            renderDailySpend(spendArr);
+        }
     });
     return but;
 }
@@ -73,6 +75,7 @@ const compSpend = e => {
 
     div.addEventListener('click', async e => {
         if (e.target.dataset.id){
+            // console.log('ID a borrar:', e.target.dataset.id);
             e.target.parentElement.innerHTML = `
             <div class="spiner">
                 <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
